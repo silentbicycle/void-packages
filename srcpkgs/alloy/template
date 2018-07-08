@@ -1,0 +1,17 @@
+# Template file for 'alloy'
+pkgname=alloy
+version=4.2
+revision=1
+_date=2015-02-22
+build_style=fetch
+depends="virtual?java-runtime minisat"
+short_desc="Alloy model checker"
+maintainer="Scott Vokes <vokes.s@gmail.com>"
+license="Apache-2.0"
+homepage="http://alloytools.org/"
+distfiles="http://alloytools.org/download/alloy${version}_${_date}.jar"
+checksum=48ccd42563adf599374fada8b7aba4c8e2b47e73f5cd19af8cf9a6ce25da235d
+
+do_install() {
+	vinstall alloy${version}_${_date}.jar 644 usr/share/java ${pkgname}.jar
+}
